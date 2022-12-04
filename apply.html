@@ -12,12 +12,7 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <script>
-        for(let i=1; i<10000000; i++){
-            let j = Math.sqrt(i);
-        }
-    </script>
+    <meta http-equiv="Expires" content="0"> 
     <title>外出申请</title>
     <style data-savepage-href="../../plugin/layui/css/layui.css">
         .layui-inline, img {
@@ -12399,6 +12394,18 @@
 <script data-savepage-src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript" data-savepage-src="js/apply.js"></script>
 <script>
+    //JS睡眠sleep()
+    function sleep(numberMillis) {
+        var now = new Date();
+        var exitTime = now.getTime() + numberMillis;
+        while (true) {
+            now = new Date();
+            if (now.getTime() > exitTime){
+                return;
+            }
+        }
+    }
+    sleep(1000);
     
     var now = new Date();
     var year = now.getFullYear();
