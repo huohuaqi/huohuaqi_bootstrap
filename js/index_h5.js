@@ -105,7 +105,7 @@ var G_FN = {
 							if (list[j].sMenuTypeCode == G_VAR.arrMenuList[i].sCode) {
 								let obj = {};
 								obj.name = list[j].sMenuName || "";
-								obj.url = list[j].sMenuUrl || "" ; 
+								obj.url = list[j].sMenuUrl + "?t="+(new date).valueOf()   || "" ; 
 								obj.icon = "img/"+ list[j].sMenuCode +".png" || "";
 								obj.code = list[j].sMenuCode || "";
 								G_VAR.arrMenuList[i].items.push(obj);
@@ -131,7 +131,7 @@ var G_FN = {
 							if (list[j].sMenuTypeCode == G_VAR.arrMenuList[i].sCode) {
 								let obj = {};
 								obj.name = list[j].sMenuName || "";
-								obj.url = list[j].sMenuUrl || "" ; 
+								obj.url = list[j].sMenuUrl + "?t="+(new date).valueOf()  || "" ; 
 								obj.icon = "img/"+ list[j].sMenuCode +".png" || "";
 								obj.code = list[j].sMenuCode || "";
 								G_VAR.arrMenuList[i].items.push(obj);
