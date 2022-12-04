@@ -9,6 +9,15 @@ window.onload = function() {
 	}
  G_FN.render();
 }
+function convertURL(url){
+    var timstamp = (new date).valueOf();
+    if (url.indexOf("?")>=0){
+       url = url + "&t=" + timstamp; 
+    }else {
+       url = url + "?t=" + timstamp;
+    };
+    return url;
+}
 //全局变量
 var G_VAR = {
 	getMright: SysUtils.getHttpRoot() + "/base/private/web/getMright", // 获取H5二级菜单的地址 
@@ -45,7 +54,6 @@ var G_FN = {
 			success: function(res) {
 				if(res.code == 1) {
 		
-					//var res = {"code":1,"data":{"sMenuTypeCode":[{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"采集","sCode":"1","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"在校","sCode":"2","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"离校·返校","sCode":"3","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"报到","sCode":"4","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"其他","sCode":"5","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"测试","sCode":"6","iSelected":0}]}};
                     
                     var res = {"code":1,"data":{"sMenuTypeCode":[{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"采集","sCode":"1","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"在校","sCode":"2","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"离校·返校","sCode":"3","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"报到","sCode":"4","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"健康信息","sCode":"6","iSelected":0},{"id":null,"sPersonName":null,"sPersonCode":null,"sAuthTypeName":null,"sAuthTypeCode":"sMenuTypeCode","sName":"其他","sCode":"5","iSelected":0}]}};
                     var list = res.data.sMenuTypeCode;
@@ -248,10 +256,11 @@ var G_FN = {
 	// 跳转至 
 	jumpNotice () {
 		window.location.href = "notice/h5/notice.html";
-	},
+    }, 
 	// 跳转url
 	jumpUrl () {
-		let sUrl = $(event.currentTarget).attr("url");
+        let sUrl = $(event.currentTarget).attr("url") + "?";
+        sUrl = convertURL(sUrl);
 		sUrl ? window.location.href = SysUtils.getHttpRoot() + sUrl : "";
 	},
 	// 退出登录
