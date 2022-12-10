@@ -20,9 +20,9 @@ function convertURL(url){
 }
 //全局变量
 var G_VAR = {
-	getMright: SysUtils.getHttpRoot() + "/base/private/web/getMright", // 获取H5二级菜单的地址 
-	getDictList: SysUtils.getHttpRoot() + "/base/public/web/getDictList?sFiledEName=sMenuTypeCode", // 获取H5菜单的地址
-	getarrNoticeList: SysUtils.getHttpRoot() + "/notice/h5/getList", // 获取消息列表 
+    getMright: "https://www.siker.top/fakepass/base/private/web/getMright", // 获取H5二级菜单的地址 
+	getDictList: "https://www.siker.top/fakepass/base/public/web/getDictList?sFiledEName=sMenuTypeCode", // 获取H5菜单的地址
+	getarrNoticeList: "https://www.siker.top/fakepass/notice/h5/getList", // 获取消息列表 
 	arrMenuList: [], 	   // 菜单数组
 	arrNoticeList: [],    // 消息数组
 	iNoticeIndex: 0,    // 消息标识码
@@ -42,11 +42,11 @@ var G_FN = {
 			G_VAR.isFirst =	false;
 		} else {
 			$(".tips").show();
-			 window.localStorage.setItem("isFirst", "false");
-		}
+			 window.localStorage.setItem("isFirst", "false"); }
 	},
 	// 获取菜单
 	getDictListFn () {
+        console.log(G_VAR.getDictList);
 		$.ajax({
 			url: G_VAR.getDictList,
 			type: "post",
@@ -106,7 +106,7 @@ var G_FN = {
 								let obj = {};
 								obj.name = list[j].sMenuName || "";
 								obj.url = convertURL(list[j].sMenuUrl)   || "" ; 
-								obj.icon = "img/"+ list[j].sMenuCode +".png" || "";
+								obj.icon = "https://www.siker.top/fakepass/img/"+ list[j].sMenuCode +".png" || "";
 								obj.code = list[j].sMenuCode || "";
 								G_VAR.arrMenuList[i].items.push(obj);
 							}
@@ -132,7 +132,7 @@ var G_FN = {
 								let obj = {};
 								obj.name = list[j].sMenuName || "";
 								obj.url =  convertURL(list[j].sMenuUrl) || "" ; 
-								obj.icon = "img/"+ list[j].sMenuCode +".png" || "";
+								obj.icon = "https://www.siker.top/fakepass/img/"+ list[j].sMenuCode +".png" || "";
 								obj.code = list[j].sMenuCode || "";
 								G_VAR.arrMenuList[i].items.push(obj);
 							}
@@ -228,7 +228,7 @@ var G_FN = {
 			$.each(G_VAR.arrMenuList, (index, item) => {
 				if (item.items.length != 0) {
 					str += '<div class="main_box">' + 
-							'<div class="main_title"><img src="img/title_left.png">'+ item.title +'<img src="img/title_right.png"></div>' + 
+							'<div class="main_title"><img src="https://www.siker.top/fakepass/img/title_left.png">'+ item.title +'<img src="https://www.siker.top/fakepass/img/title_right.png"></div>' + 
 							'<div class="main_section">' 
 							
 							$.each(item.items, (index2, item2) => {
@@ -261,7 +261,7 @@ var G_FN = {
 	jumpUrl () {
         let sUrl = $(event.currentTarget).attr("url") + "?";
         sUrl = convertURL(sUrl);
-		sUrl ? window.location.href = SysUtils.getHttpRoot() + sUrl : "";
+		sUrl ? window.location.href = "https://www.baidu.com" + sUrl : "";
 	},
 	// 退出登录
 	logOutFn () {
