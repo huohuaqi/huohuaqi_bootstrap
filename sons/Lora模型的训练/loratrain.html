@@ -74,7 +74,7 @@
                         <a href="#">HHQ </a><span class="mx-2">&bullet;</span> 2023
                         <h1 class="mb-3">
 
-                            在Stable Diffusion WebUI中使用ControlNet控制人物姿势
+                            AI绘画：使用自己的数据训练Lora模型
 
                         </h1>
                     </div>
@@ -85,50 +85,51 @@
         <div class=" container-fluid ">
             <div class="col-lg-6 offset-lg-3 col-md-12   "> 
              
-                <p><strong class="font-weight-bold font-weight-bold">前期准备</strong> </p>
+                <p><strong class="font-weight-bold font-weight-bold">1训练脚本下载</strong> </p>
                 <p>
-                    这个教程默认你已经安装好了stable-diffusion-webui， 并且已经学会了基本的用法，加载骨干模型和Lora等辅助模型。
+                    使用github上面秋叶大佬的开源脚本，将其克隆到本地，注意其中有一个子项目，如果为空，需要手动克隆子项目。
                     <br>
-                    已经如下图所示可以生成图片了：
+                    git clone --recurse-submodules https://github.com/Akegarasu/lora-scripts
+                    <br>
+                    需要python 3.10的环境，最好让其自动创建环境：即运行 install.ps1  ，他会自动创建环境和安装依赖。
+                    
+                    
+                </p>
+                <p><strong class="font-weight-bold font-weight-bold">2数据预处理</strong> </p>
+                <p>
+                    使用Stable Diffusion webUI进行标注，如下图所示：注意修改图中标注的东西
                     <div  >
                         <img src="imgs/1.png"  class="shadow p-3 mb-5 bg-body rounded  img-fluid" alt="图一"  /> 
                     </div>
-                    
+
+                    创建如下文件夹 ./train/aki/6_aki/你的图片和标签 <br>
+                    <strong>注意:</strong> 其中6表示一轮中图片重复多少次，一般设置5-10即可，图片需要几十张左右。
+                    下方训练时候的数据集路径为./train/aki
+
                 </p>
-                <p><strong class="font-weight-bold font-weight-bold">新的改变</strong> </p>
+                <p><strong class="font-weight-bold font-weight-bold">3开始训练</strong> </p>
                 <p>
-                    然而，这样生成的人物难以控制动作，因此需要添加扩展：sd-webui-controlnet，将其下载后，放入WebUI根目录下的extention目录下，重启。
-                    <br>
-                    这样在主页面就可以看到ControlNet下拉菜单了，点击之后，按照下方的顺序选择。
-                    <br>
+                    修改train.ps1文件的参数，包括基础模型的路径、图片输入大小、训练轮次数、批次大小等，注意10系列显卡需要关闭UNIT8优化！
+                    之后便可以在powershell中运行。加载模型和训练过程中需要耗费大量内存和显存，因此注意本机的承受能力。
+                </p> 
+                <p><strong class="font-weight-bold font-weight-bold">4模型的使用</strong> </p>
+                <p>
+                    在output中可以查看生成的safetensor，将其复制到 stable diffusion webUI下面的models/Lora，
+                    然后像使用普通lora一样使用就行，
+                    但是注意，基础模型选择与你训练时候的基础模型一样才能效果较好。
                     <div  >
-                        <img src="imgs/2.png" class="shadow p-3 mb-5 bg-body rounded  img-fluid" alt="图一"  /> 
+                        <img src="imgs/2.png"  class="shadow p-3 mb-5 bg-body rounded  img-fluid" alt="图一"  /> 
                     </div>
-                    其中模型需要自己找资源下载【官网的模型太大，这里有个小的：这里】，我下载了openpose的模型，因此Preprocessor也因此需要改为openpose。图片大小设置为与上面的相同。都设置好之后，运行即可。如果提示FileNotFound而且姿势不起作用，那么去webUI根目录修改config.json，修改最下面的"control_net_model_config"， “control_net_model_adapter_config”，为真实的目录即可。
-    
-    
-                </p>
-                <p><strong class="font-weight-bold font-weight-bold">效果展示</strong> </p>
-                <p>
-                    可以看到使用了ControlNet之后，可以控制人物的姿势了，但是似乎生成的人脸质量会下降一点，但是姿势整体是对的。
+
+                    由于训练时间比较短，数据集比较差，因此效果图差了一点：
+
                     <div  >
                         <img src="imgs/3.png"  class="shadow p-3 mb-5 bg-body rounded  img-fluid" alt="图一"  /> 
                     </div>
+
+                    不过如果手动弄好点数据集，有更好的设备，相信你也能训练好一个AI模型。
                 </p> 
-                <p><strong class="font-weight-bold font-weight-bold">后话</strong> </p>
-                <p>
-                    第四次工业革命——AI科技革命已然爆发，对具有大国梦的中国来说很不幸这一次还是发生在美国，为了不让中国落后太多，这个帖子目的主要是让更多的人了解世界前沿的科技。
-                    <br>
-                    [1] https://github.com/Mikubill/sd-webui-controlnet <br>
-                    [2] https://github.com/AUTOMATIC1111/stable-diffusion-webui <br>
-                    [3] High-Resolution Image Synthesis with Latent Diffusion Models <br>
-                </p> 
-                <p><strong class="font-weight-bold font-weight-bold">其他地址</strong> </p>
-                <p>
-                    本文已经同步发表在CSDN
-                    <br>
-                    原文链接：https://blog.csdn.net/u014126257/article/details/129714338
-                </p>  
+                
     
                  
             </div>
