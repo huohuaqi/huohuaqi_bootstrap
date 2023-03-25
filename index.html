@@ -1,80 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="x5-fullscreen" content="true">
-	<meta name="full-screen" content="yes">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<meta http-equiv="cache-control" content="max-age=0"/>
-	<meta http-equiv="cache-control" content="no-cache"/>
-	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-	<meta http-equiv="Pragma" content="no-cache"/>
-	<meta http-equiv="Expires" content="0"/>
-    <!-- <title>首页</title> -->
-    <title> </title>
-	<link rel="stylesheet" href="https://www.siker.top/fakepass/plugin/weui/css/weui.css">
-	<link rel="stylesheet" href="https://www.siker.top/fakepass/css/index_h5.css">
+    <title>霍华骑的个人主页</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="static/css/css.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/jquery-ui.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="static/css/mediaelementplayer.min.css">
+
+
+    <link rel="stylesheet" href="static/css/aos.css">
+
+    <link rel="stylesheet" href="static/css/style1.css">
+
 </head>
+
 <body>
-	<div id="container" class="bg">
-		<!-- 加载中 -->
-		<div class="loading_mask"></div>
-		<div class="loading_tip">
-			<div class="loading_img">
-				<i class="weui-loading"></i>
-			</div>
-			<div class="loading_text">加载中...</div>
-		</div>
-		
-		<!-- 消息栏 -->
-<!-- 		<div class="notice_box" onclick="G_FN.jumpNotice()">
-			<div class="notice_left">
-				<img class="gb_img" src="img/gg_icon@2x.png" alt="">
-				<div class="notice_text">暂无消息</div>
-				<img class="new" src="img/new_img@2x.png" alt="">
-			</div>
-			<div>
-				<img class="more" src="img/more_icon@2x.png" alt="">
-			</div>
-		</div> -->
-		
-		<div class="main"></div>
-		<div class="footer_text">粤ICP备05084312号</div>
-		
-		<div class="tips">
-			<div class="weui-mask"></div>
-			<div class="tips_box">
-				<div class="tips_title">温馨提示</div>
-				<div class="tips_list">
-<!-- 					<div>欢迎使用本系统</div>
-					<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本系统部分模块需要采集您的人脸特征数</div>
-					<div>据，并授权学校相关信息系统获得您所填写或</div>
-					<div>留存在学校的身份信息(如姓名、照片、身份证</div>
-					<div>号、学工号等信息)，以帮助您在学校不同的信</div>
-					<div>息系统中更快捷地使用相应的服务。</div>
-					
-					<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-					<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，您同意本协议并开始使用我们的服</div>
-					<div>务后，我们将严格按照<span>《人脸识别服务条款及</span></div>
-					<div><span>隐私声明》</span>相关要求使用与保护您的个人信</div>
-					<div>息，为您提供更好地服务，感谢您的信任。</div> -->
-						<div>欢迎使用本系统<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本系统部分模块需要采集您的人脸特征数据，并授权学校相关信息系统获得您所填写或留存在学校的身份信息(如姓名、照片、身份证号、学工号等信息)，以帮助您在学校不同的信息系统中更快捷地使用相应的服务。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，您同意本协议并开始使用我们的服务后，我们将严格按照<span>《人脸识别服务条款及</span><span>隐私声明》</span>相关要求使用与保护您的个人信息，为您提供更好地服务，感谢您的信任。</div>
-				</div>
-				<div class="btn_box">
-					<div class="tips_btn no" onclick="G_FN.closePage()">不同意</div>
-					<div class="tips_btn yes" onclick="G_FN.closeTips()">同意并继续</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <header class="site-navbar py-4" role="banner">
+
+            <div class="container">
+                <div class="row align-items-center">
+
+
+                    <div class="col-3">
+                        <h1 class="site-logo"><a href="" class="h2">个人博客<span class="text-primary">.</span> </a></h1>
+                    </div>
+                    <div class="col-9">
+                        <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
+
+
+
+                            <div class="d-block d-lg-none ml-md-0 mr-auto"><a href="#"
+                                    class="site-menu-toggle js-menu-toggle text-black"><span
+                                        class="icon-menu h3"></span></a></div>
+
+                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                <li class="active">
+                                    <a href="">Home</a>
+                                </li>
+                                <!-- <li class="has-children">
+                                    <a href="#">Dropdown</a>
+                                    <ul class="dropdown arrow-top">
+                                        <li><a href="#">Menu One</a></li>
+                                        <li><a href="#">Menu Two</a></li>
+                                        <li><a href="#">Menu Three</a></li>
+                                    </ul>
+                                </li> -->
+                                <li><a href="about.html">个人简历</a></li>
+                                <!-- <li><a href="contact.html">Contact</a></li> -->
+                                <!-- <li><a href="login-register.html">Login / Register</a></li> -->
+                            </ul>
+                        </nav>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+
+
+
+        <div class="container pt-5 hero">
+            <div class="row align-items-center text-center text-md-left">
+
+                <div class="col-lg-4">
+                    <h1 class="mb-3 display-3">Make China Great Again</h1>
+                    <p>这是关于个人博客的网站，展示自己的项目、学习过程中的错误和收获，记录工作生活的点滴，让知识在时间中积淀。</p>
+                </div>
+                <div class="col-lg-8">
+                    <img src="static/picture/asset-1.png" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 内容主体 -->
+        <div class="site-section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- 左边的头像 -->
+                    <div class="col-lg-3">
+
+                    </div>
+
+
+                    <!-- 每个小卡片 -->
+                    <div class="col-lg-9">
+                        <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                            <div class="image" style="background-image: url('sons/ControlNet的使用教程/imgs/1.png');"></div>
+                            <div class="text">
+                                <h3 class="font-weight-light">
+                                    <a href="sons/ControlNet的使用教程/controlnet.html">  
+                                        在Stable Diffusion WebUI中使用ControlNet控制人物姿势
+                                    </a>
+                                </h3>
+                                <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By HHQ
+                                            <span class="sep">/</span> 2023  </small></span></div>
+                                <div class="player">
+                                    <span>关键词: AI绘画、Stable Diffusion、ControlNet</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="site-blocks-cover overlay inner-page-cover"
+                style="background-image: url(static/image/hero_bg_1.jpg);" data-aos="fade"
+                data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center text-center">
+
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <h2>Subscribe</h2>
+                            <p class="mb-5">Thank your.</p>
+                            <form action="#" method="post" class="site-block-subscribe">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control border-secondary text-white bg-transparent"
+                                        placeholder="Enter Email" aria-label="Enter Email"
+                                        aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" id="button-addon2">SEND</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="static/js/jquery-3.3.1.min.js"></script>
+        <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="static/js/jquery-ui.js"></script>
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/owl.carousel.min.js"></script>
+        <script src="static/js/jquery.stellar.min.js"></script>
+        <script src="static/js/jquery.countdown.min.js"></script>
+        <script src="static/js/jquery.magnific-popup.min.js"></script>
+        <script src="static/js/aos.js"></script>
+
+        <script src="static/js/mediaelement-and-player.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+                for (var i = 0; i < total; i++) {
+                    new MediaElementPlayer(mediaElements[i], {
+                        pluginPath: '#',
+                        shimScriptAccess: 'always',
+                        success: function () {
+                            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                            for (var j = 0; j < targetTotal; j++) {
+                                target[j].style.visibility = 'visible';
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
+
+
+        <script src="static/js/main.js"></script>
+
 </body>
-<script type="text/javascript" src="https://www.siker.top/fakepass/plugin/jquery/jquery.js"></script>
-<script type="text/javascript" src="https://www.siker.top/fakepass/plugin/weui/weui.js"></script>
-<script type="text/javascript" src="https://www.siker.top/fakepass/js/SysUtils.js"></script>
-<script type="text/javascript" src="https://www.siker.top/fakepass/js/WeuiUtils.js"></script>
-  
-<script type="text/javascript" src="https://www.siker.top/fakepass/js/jweixin-1.2.0.js"></script>
-<script type="text/javascript" src="https://www.siker.top/fakepass/js/index_h5.js"></script>
+
 </html>
